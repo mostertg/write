@@ -1,0 +1,27 @@
+@startuml
+	left to right direction
+	skinparam packageStyle rectangle
+	actor Patient
+	actor Doctor
+	actor Nurse
+	actor Radiologist
+	rectangle Health_Information_System {
+	
+		rectangle Electronic_Health_Record {
+			Patient <- (Diagnosis)
+			(Diagnosis) <- Doctor
+			
+			Patient <- (Perscription)
+			(Perscription) <- Doctor
+			
+			Patient <- (Monitoring)
+			(Monitoring) <- Nurse
+			
+			Patient <- (Drug Administration)
+			(Drug Administration) <- Nurse
+			
+			Patient <- (X-Rays)
+			(X-Rays) <- Radiologist
+		}	
+	}
+@enduml

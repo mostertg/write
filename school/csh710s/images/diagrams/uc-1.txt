@@ -1,0 +1,17 @@
+@startuml
+	left to right direction
+	skinparam packageStyle rectangle
+	actor Patient
+	actor Doctor
+	rectangle Health_Information_System {
+		Patient <- (Diagnosis)
+		(Diagnosis) .> (Patient EHR) : include
+		(Diagnosis) <- Doctor
+		
+		Patient <- (Perscription)
+		(Perscription) .> (Patient EHR) : include
+		(Perscription) <- Doctor
+
+		(Patient EHR) -> (Doctor)
+		}
+@enduml

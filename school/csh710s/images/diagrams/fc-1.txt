@@ -1,0 +1,23 @@
+@startuml
+	(*) --> "Patient in HIS"
+	
+	if "Patient in HIS database?" then
+		-->[Yes] "Patient diagnosis by Doctor"
+		-left-> "Record in EHR: diagnosis"
+		"Record in EHR: diagnosis" -down-> "Patient monitoring by Nurse"
+		"Patient diagnosis by Doctor" -right-> "Radiologist X-rays"
+		"Radiologist X-rays" -down-> "Record in EHR: medical imaging"
+		"Record in EHR: medical imaging" -left-> "Doctor prescribes medication"
+	else
+		->[No] "Registration"
+		-up-> "Patient in HIS"
+	"Patient diagnosis by Doctor" -down-> "Doctor prescribes medication"
+	"Doctor prescribes medication" -down-> "Record in EHR: medication"
+	
+	"Patient diagnosis by Doctor" -down-> "Patient monitoring by Nurse"
+	"Doctor prescribes medication" -down-> "Nurse administers medication"
+	"Nurse administers medication" -down-> "Record in EHR: medication"
+	"Nurse administers medication" -up-> "Patient monitoring by Nurse"
+	"Patient monitoring by Nurse" -down-> "Record in EHR: medication"
+
+@enduml
