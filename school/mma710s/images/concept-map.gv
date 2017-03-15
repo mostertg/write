@@ -1,0 +1,111 @@
+digraph conceptmap {
+    node [fontname=Arial, fontsize=10];
+    edge [color=red, style=bold, fontsize=9];
+    rankdir=LR;
+    ranksep=1.45;
+    nodesep=0.3;
+
+
+    subgraph clusterSystem {
+        label="Concept Map";
+        fillcolor="#ffffdd"; style=filled; color=black;
+        node [shape=box, style=filled, fillcolor="#ccffcc", color="#558855"];
+
+        { Giovanni [shape="none", width=.352, height=0.77, color="#ffffaa", fillcolor="none", image="Actor.png", label=""]; }
+
+        Colour [label=" Fave Colour"]
+        PFood  [label="Preferred Food"]
+        Sport  [label="Fave Sport"]
+        Film  [label="Fave Film Type"]
+        Time  [label="Fave Time of Year"]
+        FFood  [label="Fave Food"]
+
+    subgraph cluster1 {
+        label="Colour"
+        node [shape=ellipse, style=filled, fillcolor="#eafafa", color="#0000ff"]
+        Blue [label="Blue"]
+        TT [label="Cool - temperature,\nCool - temperament"]
+        WatLif [label="Water, Life"]
+        rgb [label="rgb(0, 0, 255)"]
+        hsl [label="hsl(240, 100%, 50%)"]
+    }
+
+    subgraph cluster2 {
+        label="Preferred Food"
+        node [shape=ellipse, style=filled, fillcolor="#eafafa", color="#0000ff"]
+        Meat [label="Meat"]
+        When [label="When?\nOften enough"]
+    }
+
+    subgraph cluster3 {
+        label="Sport"
+        node [shape=ellipse, style=filled, fillcolor="#eafafa", color="#0000ff"]
+        Rugby [label="Rugby"]
+        Manly [label="Manly"]
+        SAS [label="Strength &\nAgility"]
+        Work [label="Good\nWorkout"]
+        JL [label="Jonah\nLomu"]
+    }
+
+    subgraph cluster4 {
+        label="Film"
+        node [shape=ellipse, style=filled, fillcolor="#eafafa", color="#0000ff"]
+        Action [label="Action"]
+        Exciting [label="Exciting"]
+        Entertaining [label="Entertaining"]
+    }
+
+    subgraph cluster5 {
+        label="Time"
+        node [shape=ellipse, style=filled, fillcolor="#eafafa", color="#0000ff"]
+        Summer [label="Summer"]
+        Swimming [label="Swimming"]
+        Beach [label="Beach"]
+    }
+
+    subgraph cluster6 {
+        label="FFood"
+        node [shape=ellipse, style=filled, fillcolor="#eafafa", color="#0000ff"]
+        Pizza [label="Pizza"]
+        FingFood [label="Finger\nFood!"]
+        Friends [label="Friends"]
+        Party [label="Perfect for\nParty"]
+    }
+    }
+
+// Nodes -> Edges
+    Giovanni -> Colour
+    Giovanni -> PFood
+    Giovanni -> Sport
+    Giovanni -> Film
+    Giovanni -> Time
+    Giovanni -> FFood
+
+    Colour -> Blue
+    Blue -> TT
+    Blue -> WatLif
+    Blue -> hsl
+    Blue -> rgb
+
+    PFood -> Meat
+    Meat -> When
+
+    Sport -> Rugby
+    Rugby -> Manly
+    Rugby -> SAS
+    Rugby -> Work
+    Rugby -> JL
+
+    Film -> Action
+    Action -> Exciting
+    Action -> Entertaining
+
+    Time -> Summer
+    Summer -> Swimming
+    Summer -> Beach
+
+    FFood -> Pizza
+    Pizza -> FingFood
+    Pizza -> Friends
+    Pizza -> Party
+}
